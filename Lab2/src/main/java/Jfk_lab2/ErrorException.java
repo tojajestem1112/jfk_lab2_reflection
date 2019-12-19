@@ -1,3 +1,5 @@
+package Jfk_lab2;
+
 public class ErrorException extends Exception{
 
     int id;
@@ -15,6 +17,6 @@ public class ErrorException extends Exception{
 
     public String toString()
     {
-        return "[ERROR "+id+" ]: "+message;
+        return "[ERROR "+id+"]: "+message;
     }
 }
