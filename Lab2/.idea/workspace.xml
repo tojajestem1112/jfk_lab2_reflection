@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="146b3f08-db6c-44cf-9e29-369890bcb26b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Jfk_lab2/JarCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Jfk_lab2/JarExplorer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Jfk_lab2/JarExplorer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Jfk_lab2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Jfk_lab2/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Jfk_lab2/ParameterReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Jfk_lab2/ParameterReader.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,22 +31,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Jfk_lab2/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="16" column="43" lean-forward="true" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+            <state relative-caret-position="306">
+              <caret line="27" column="86" selection-start-line="27" selection-start-column="86" selection-end-line="27" selection-end-column="86" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Jfk_lab2/JarExplorer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-662">
+              <caret line="84" column="43" selection-start-line="84" selection-start-column="43" selection-end-line="84" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Jfk_lab2/JarExplorer.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Jfk_lab2/JarCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="68" column="35" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#showCtorsOfClasses#0;class#JarExplorer#0" />
-                <element signature="method#showFunctions#0;class#JarExplorer#0" />
-              </folding>
+            <state relative-caret-position="34">
+              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -91,6 +98,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>invali</find>
+      <find>pakie</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -132,9 +140,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+    <option name="x" value="202" />
+    <option name="y" value="43" />
+    <option name="width" value="1204" />
+    <option name="height" value="1099" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -214,18 +223,18 @@
       <option name="presentableId" value="Default" />
       <updated>1576758330491</updated>
       <workItem from="1576758337067" duration="6872000" />
-      <workItem from="1576767153956" duration="4350000" />
+      <workItem from="1576767153956" duration="7070000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11222000" />
+    <option name="totallyTimeSpent" value="13942000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="781" height="830" extended-state="0" />
+    <frame x="162" y="35" width="963" height="879" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.26907074" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27685493" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -234,7 +243,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3495702" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3266399" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -249,7 +258,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info active="true" anchor="right" id="Maven" order="5" visible="true" weight="0.17198336" />
+      <window_info anchor="right" id="Maven" order="5" visible="true" weight="0.1406423" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" />
@@ -322,20 +331,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Jfk_lab2/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="16" column="43" lean-forward="true" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+        <state relative-caret-position="306">
+          <caret line="27" column="86" selection-start-line="27" selection-start-column="86" selection-end-line="27" selection-end-column="86" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Jfk_lab2/JarExplorer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="68" column="35" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="35" />
+        <state relative-caret-position="-662">
+          <caret line="84" column="43" selection-start-line="84" selection-start-column="43" selection-end-line="84" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#showCtorsOfClasses#0;class#JarExplorer#0" />
-            <element signature="method#showFunctions#0;class#JarExplorer#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Jfk_lab2/JarCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
         </state>
       </provider>
     </entry>

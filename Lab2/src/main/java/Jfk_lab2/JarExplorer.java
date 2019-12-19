@@ -30,7 +30,7 @@ public class JarExplorer
             URL[] urls = {new URL("jar:file:"+jarPath+"!/")};
             classLoader = URLClassLoader.newInstance(urls);
         } catch (IOException e) {
-            throw new ErrorException("Nie znaleziono pliku zrodlowego [.jar]", 3);
+            throw new ErrorException("The input file has been not found [.jar]", 3);
         }
 
         while(enumeration.hasMoreElements())
@@ -58,7 +58,7 @@ public class JarExplorer
     }
     public void showClassNames()
     {
-        System.out.println("KLASY:\n");
+        System.out.println("Classes:\n");
         for(int i =0; i<classNames.size(); i++)
         {
             System.out.println("\t"+classNames.get(i));
@@ -66,7 +66,7 @@ public class JarExplorer
     }
     public void showPackageNames()
     {
-        System.out.println("PAKIETY:\n");
+        System.out.println("Packages:\n");
         for(int i=0; i<packagesNames.size();i++)
         {
             System.out.println("\t"+packagesNames.get(i));
@@ -74,15 +74,15 @@ public class JarExplorer
     }
     public void showMethodsOfClasses(LinkedList<String> classes)
     {
-        System.out.println("\nLISTA METOD KLAS");
+        System.out.println("\nLIST OF METHODS IN CLASSES");
         for(int i=0; i<classes.size();i++)
         {
-            System.out.println("\tKlasa "+classes.get(i));
+            System.out.println("\tClass "+classes.get(i));
 
             try {
                 Class singleClass = classLoader.loadClass(classes.get(i));
                 Method[] methods = singleClass.getDeclaredMethods();
-                showFunctions(methods);
+                showFunctions(methods, true);
             } catch (ClassNotFoundException e) {
                 System.out.println("[WARN] Class " + classes.get(i) + "not found. Methods of class can not be showed");
             }
@@ -90,20 +90,43 @@ public class JarExplorer
     }
     public void showCtorsOfClasses(LinkedList<String> classes)
     {
-        System.out.println("\nLISTA KONSTRUKTORÓW KLAS");
+        System.out.println("\nLIST OF CONSTRUCTORS IN CLASSES");
         for(int i=0; i<classes.size();i++)
         {
-            System.out.println("\tKlasa "+classes.get(i));
+            System.out.println("\tClass "+classes.get(i));
             try {
                 Class singleClass = classLoader.loadClass(classes.get(i));
                 Constructor<?>[] ctors = singleClass.getDeclaredConstructors();
-                showFunctions(ctors);
+                showFunctions(ctors, false);
             } catch (ClassNotFoundException e) {
                 System.out.println("[WARN] Class " + classes.get(i) + "not found. Constructors of class can not be showed");
             }
         }
     }
-    private void showFunctions(Executable[] functions)
+    public void showFieldsOfClasses(LinkedList<String> classes)
+    {
+        System.out.println("LIST OF FIELDS IN CLASSES");
+        for(int i=0; i<classes.size();i++)
+        {
+            System.out.println("\tClass "+classes.get(i));
+            try
+            {
+                Class singleClass = classLoader.loadClass(classes.get(i));
+                Field[] fields = singleClass.getDeclaredFields();
+                for(int k=0; k<fields.length; k++)
+                {
+                    System.out.println("\t\t"+Modifier.toString(fields[k].getModifiers())
+                                            + " "
+                                            +fields[k].getType().getName()
+                                            + " "
+                                            +fields[k].getName());
+                }
+            }catch(ClassNotFoundException e){
+                System.out.println("[WARN] Class " + classes.get(i) + " not found. Methods of class can not be showed");
+            }
+        }
+    }
+    private void showFunctions(Executable[] functions, boolean isMethod)
     {
         for(int i=0; i<functions.length;i++)
         {
@@ -111,8 +134,13 @@ public class JarExplorer
                 //System.out.println(Modifier.toString(object[i].getModifiers())+object[i].getName());
                 System.out.print("\t\t"
                                 +Modifier.toString(functions[i].getModifiers())
-                                +" "
-                                +functions[i].getName() + "(");
+                                +" ");
+                if(isMethod)
+                {
+                    Method met = (Method) functions[i];
+                    System.out.print(met.getReturnType().getName());
+                }
+                System.out.print(" " + functions[i].getName() + "(");
 
                 Parameter[] parameters = functions[i].getParameters();
                 for(int k=0; k<parameters.length; k++)

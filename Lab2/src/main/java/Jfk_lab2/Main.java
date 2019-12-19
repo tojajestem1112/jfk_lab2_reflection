@@ -25,7 +25,7 @@ public class Main
             }
             if(parReader.getListOfClassForListFields().size()>0)
             {
-
+                explorer.showFieldsOfClasses(parReader.getListOfClassForListFields());
             }
         }
         catch(ErrorException e)
