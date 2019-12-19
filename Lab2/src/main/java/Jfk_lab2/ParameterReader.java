@@ -4,8 +4,8 @@ import java.util.LinkedList;
 
 public class ParameterReader
 {
-    private boolean isListOfPackagesParameter = false;
-    private boolean isListOfClassesParameter = false;
+    private boolean listOfPackagesParameter = false;
+    private boolean listOfClassesParameter = false;
 
     private LinkedList<String> listOfClassForListMethods  = new LinkedList<>();
     private LinkedList<String> listOfClassForListFields = new LinkedList<>();
@@ -21,15 +21,15 @@ public class ParameterReader
         {
             if(args[i].equals("--list-packages"))
             {
-                if(isListOfPackagesParameter == true)
+                if(listOfPackagesParameter == true)
                     System.out.println("[WARN] duplicate of --list-package parameter!");
-                isListOfPackagesParameter = true;
+                listOfPackagesParameter = true;
             }
             else if(args[i].equals("--list-classes"))
             {
-                if(isListOfClassesParameter == true)
+                if(listOfClassesParameter == true)
                     System.out.println("[WARN] duplicate of --list-classes");
-                isListOfClassesParameter = true;
+                listOfClassesParameter = true;
             }
             else if(i == args.length-1)//two-party parameters
             {
@@ -94,8 +94,8 @@ public class ParameterReader
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Analiza wejścia:\n");
         stringBuilder.append("Plik: "+jarPath+"\n");
-        if(isListOfPackagesParameter) stringBuilder.append("\tlista pakietów\n");
-        if(isListOfClassesParameter) stringBuilder.append("\tlista klas\n");
+        if(listOfPackagesParameter) stringBuilder.append("\tlista pakietów\n");
+        if(listOfClassesParameter) stringBuilder.append("\tlista klas\n");
         if(listOfClassForListMethods.size()>0)
         {
             stringBuilder.append("\tLista metod klas:\n");
@@ -129,5 +129,18 @@ public class ParameterReader
             stringBuilder.append("Plik Wyjściowy: "+outputPath);
         }
         return stringBuilder.toString();
+    }
+
+    public String getJarPath() {
+        return jarPath;
+    }
+    public boolean isListOfPackagesParameter()
+    {
+        return listOfPackagesParameter;
+    }
+    public boolean isListOfClassesParameter()
+
+    {
+        return listOfClassesParameter;
     }
 }

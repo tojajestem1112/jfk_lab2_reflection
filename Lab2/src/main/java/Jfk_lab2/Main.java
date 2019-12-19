@@ -7,7 +7,15 @@ public class Main
         try
         {
             ParameterReader parReader = new ParameterReader(args);
-            System.out.println(parReader);
+            //Check up parameters
+            //System.out.println(parReader);
+
+            JarExplorer explorer = new JarExplorer(parReader.getJarPath());
+            if (parReader.isListOfClassesParameter())
+                explorer.showClassNames();
+            if (parReader.isListOfPackagesParameter())
+                explorer.showPackageNames();
+
         }
         catch(ErrorException e)
         {
