@@ -143,4 +143,16 @@ public class ParameterReader
     {
         return listOfClassesParameter;
     }
+    public LinkedList<String> getListOfClassForListMethods()
+    {
+        return listOfClassForListMethods;
+    }
+    public LinkedList<String> getListOfClassForListFields()
+    {
+        return listOfClassForListFields;
+    }
+    public LinkedList<String> getListOfClassForListCtors()
+    {
+        return listOfClassForListCtors;
+    }
 }

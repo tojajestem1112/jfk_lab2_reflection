@@ -15,7 +15,18 @@ public class Main
                 explorer.showClassNames();
             if (parReader.isListOfPackagesParameter())
                 explorer.showPackageNames();
+            if(parReader.getListOfClassForListMethods().size()>0)
+            {
+                explorer.showMethodsOfClasses(parReader.getListOfClassForListMethods());
+            }
+            if(parReader.getListOfClassForListCtors().size()>0)
+            {
+                explorer.showCtorsOfClasses(parReader.getListOfClassForListCtors());
+            }
+            if(parReader.getListOfClassForListFields().size()>0)
+            {
 
+            }
         }
         catch(ErrorException e)
         {
