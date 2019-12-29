@@ -34,7 +34,12 @@ public class JarCreator
                 FileOutputStream fos = new FileOutputStream(outputPath);
                 JarOutputStream jos = new JarOutputStream(fos,manifest);
             ){
-
+            for(int i=0; i<packagesNames.size(); i++)
+            {
+                JarEntry entry = new JarEntry(packagesNames.get(i).replace('.','/')+"/");
+                jos.putNextEntry(entry);
+                jos.closeEntry();
+            }
             for(int i=0; i<ctClasses.size(); i++)
             {
                 JarEntry entry = new JarEntry(ctClasses.get(i).getName().replace('.','/')+".class");

@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d89f1d18-d224-40a5-8886-e3304e83fe22" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/ScriptExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab2/Lab2.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarExplorer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarExplorer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/ParameterReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/ParameterReader.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/Lab2/target/" />
@@ -24,10 +18,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
+            <state relative-caret-position="455">
               <caret line="34" column="64" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -36,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+            <state relative-caret-position="302">
+              <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,8 +66,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarExplorer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="30" />
+            <state relative-caret-position="-1276">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,8 +107,8 @@
         <option value="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/ParameterReader.java" />
         <option value="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/ScriptExecutor.java" />
         <option value="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarExplorer.java" />
-        <option value="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarCreator.java" />
         <option value="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/Main.java" />
+        <option value="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarCreator.java" />
       </list>
     </option>
   </component>
@@ -209,6 +206,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -261,12 +259,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1577637197858</updated>
-      <workItem from="1577637201387" duration="5262000" />
+      <workItem from="1577637201387" duration="5576000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5262000" />
+    <option name="totallyTimeSpent" value="5576000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -306,24 +304,20 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="34" column="64" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/ParameterReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="126" column="28" selection-start-line="126" selection-start-column="28" selection-end-line="126" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/ErrorException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarExplorer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -337,20 +331,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarCreator.java">
+    <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarExplorer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+        <state relative-caret-position="-1276">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/Main.java">
+    <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/ErrorException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="34" column="64" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
