@@ -81,7 +81,7 @@ public class ParameterReader
         }
         if(scriptPath!= null && outputPath==null)
         {
-            System.out.println("[WARN] Output file is not detected, there is no sense execute script");
+            System.out.println("[WARN] Output file is not detected, there is no sense to execute script");
         }
         if(scriptPath == null && outputPath!=null)
         {
@@ -155,4 +155,6 @@ public class ParameterReader
     {
         return listOfClassForListCtors;
     }
+    public String getScriptPath(){ return scriptPath;}
+    public String getOutputPath(){return outputPath;}
 }

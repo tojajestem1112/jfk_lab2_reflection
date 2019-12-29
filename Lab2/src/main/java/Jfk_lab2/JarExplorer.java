@@ -8,6 +8,7 @@ import java.util.Enumeration;
 import java.util.LinkedList;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+import java.util.jar.Manifest;
 
 public class JarExplorer
 {
@@ -16,6 +17,7 @@ public class JarExplorer
     private LinkedList<String> classNames = new LinkedList<>();
     private LinkedList<String> packagesNames = new LinkedList<>();
     private ClassLoader classLoader;
+    private Manifest manifest=null;
 
     public JarExplorer(String jarPath) throws ErrorException {
         this.jarPath = jarPath;
@@ -26,6 +28,7 @@ public class JarExplorer
         try
         {
             jarFile = new JarFile(jarPath+"//");
+            manifest = jarFile.getManifest();
             enumeration = jarFile.entries();
             URL[] urls = {new URL("jar:file:"+jarPath+"!/")};
             classLoader = URLClassLoader.newInstance(urls);
@@ -155,4 +158,10 @@ public class JarExplorer
                 System.out.print(")\n");
         }
     }
+
+    public LinkedList<String> getClassNames() {return classNames;}
+
+    public LinkedList<String> getPackagesNames() {return packagesNames;}
+
+    public Manifest getManifest() {return manifest;}
 }
