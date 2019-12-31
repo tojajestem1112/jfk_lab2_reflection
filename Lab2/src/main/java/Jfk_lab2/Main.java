@@ -2,6 +2,7 @@ package Jfk_lab2;
 
 import java.io.IOException;
 import java.sql.SQLOutput;
+import java.util.regex.Pattern;
 
 public class Main
 {
@@ -30,8 +31,10 @@ public class Main
             //EDITION AND WRITING NEW JAR FILE
             if(parReader.getOutputPath()!= null)
             {
-                ScriptExecutor scriptExe = new ScriptExecutor(parReader.getJarPath(),parReader.getOutputPath(), explorer.getClassNames(), explorer.getPackagesNames());
-                JarCreator jarCreator = new JarCreator(scriptExe.getCtClasses(), scriptExe.getPackagesNames(), explorer.getManifest());
+                ScriptExecutor scriptExe = new ScriptExecutor(parReader.getJarPath(),parReader.getScriptPath(), explorer.getClassNames());
+
+                System.out.println("Creating jar file!");
+                JarCreator jarCreator = new JarCreator(scriptExe.getCtClasses(), scriptExe.getPackagesNames(), explorer.getManifest(), explorer.getStreamsForOtherFiles(),explorer.getEntriesForOtherFiles());
                 jarCreator.createJar(parReader.getOutputPath());
             }
             else

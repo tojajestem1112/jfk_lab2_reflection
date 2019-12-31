@@ -1,6 +1,9 @@
 package Jfk_lab2;
 
+import Jfk_lab2.ErrorException;
+
 import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.*;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -16,6 +19,8 @@ public class JarExplorer
     private String jarPath;
     private LinkedList<String> classNames = new LinkedList<>();
     private LinkedList<String> packagesNames = new LinkedList<>();
+    private LinkedList<InputStream> streamsForOtherFiles = new LinkedList<>();
+    private LinkedList<String> entriesForOtherFiles = new LinkedList<>();
     private ClassLoader classLoader;
     private Manifest manifest=null;
 
@@ -53,6 +58,15 @@ public class JarExplorer
                 clazz = clazz.substring(0,clazz.length()-6)
                                 .replace('/','.');
                 classNames.add(clazz);
+            }
+            else if(!jarEntry.isDirectory()&&!jarEntry.getName().endsWith(".MF"))
+            {
+                try {
+                    streamsForOtherFiles.add(jarFile.getInputStream(jarEntry));
+                    entriesForOtherFiles.add(jarEntry.getName());
+                } catch (IOException e) {
+                    throw new ErrorException ("IO EXCEPTION", 100);
+                }
             }
         }
 
@@ -164,4 +178,12 @@ public class JarExplorer
     public LinkedList<String> getPackagesNames() {return packagesNames;}
 
     public Manifest getManifest() {return manifest;}
+
+    public LinkedList<InputStream> getStreamsForOtherFiles() {
+        return streamsForOtherFiles;
+    }
+
+    public LinkedList<String> getEntriesForOtherFiles() {
+        return entriesForOtherFiles;
+    }
 }

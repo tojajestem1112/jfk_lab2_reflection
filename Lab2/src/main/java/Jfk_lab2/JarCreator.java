@@ -1,11 +1,13 @@
 package Jfk_lab2;
 
+import Jfk_lab2.ErrorException;
 import javassist.CannotCompileException;
 import javassist.CtClass;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.LinkedList;
 import java.util.jar.JarEntry;
 import java.util.jar.JarOutputStream;
@@ -15,13 +17,18 @@ public class JarCreator
 {
     LinkedList<CtClass> ctClasses= new LinkedList<>();
     LinkedList<String> packagesNames = new LinkedList<>();
+    LinkedList<InputStream> streamsForOtherFiles = new LinkedList<>();
+    LinkedList<String> entriesForOtherFiles = new LinkedList<>();
     Manifest manifest = null;
 
-    public JarCreator(LinkedList<CtClass> ctClasses, LinkedList<String> packagesNames, Manifest manifest)
+    public JarCreator(LinkedList<CtClass> ctClasses, LinkedList<String> packagesNames,
+                      Manifest manifest, LinkedList<InputStream> streamsForOtherFiles, LinkedList<String> entriesForOtherFiles)
     {
         this.ctClasses = ctClasses;
         this.packagesNames = packagesNames;
         this.manifest = manifest;
+        this.streamsForOtherFiles = streamsForOtherFiles;
+        this.entriesForOtherFiles = entriesForOtherFiles;
     }
 
     public int createJar(String outputPath) throws ErrorException {
@@ -34,7 +41,20 @@ public class JarCreator
                 FileOutputStream fos = new FileOutputStream(outputPath);
                 JarOutputStream jos = new JarOutputStream(fos,manifest);
             ){
-            for(int i=0; i<packagesNames.size(); i++)
+            byte buff[]=new byte[1024];
+            int l;
+            for(int i=0; i<streamsForOtherFiles.size();i++)
+            {
+
+                JarEntry entry = new JarEntry(entriesForOtherFiles.get(i));
+                jos.putNextEntry(entry);
+                while((l= (streamsForOtherFiles.get(i).read(buff, 0, buff.length))) !=-1)
+                    jos.write(buff,0, l );
+                jos.closeEntry();
+            }
+
+
+            for(int i=0; i<packagesNames.size(); i++)//in need because of empty packages
             {
                 JarEntry entry = new JarEntry(packagesNames.get(i).replace('.','/')+"/");
                 jos.putNextEntry(entry);
@@ -51,11 +71,11 @@ public class JarCreator
 
 
         } catch (FileNotFoundException e) {
-            throw new ErrorException("File not found error "+outputPath, 23);
+            throw new ErrorException("Cannot create new jar! (is jar opened in other program?)"+outputPath, 23);
         } catch (CannotCompileException g) {
             throw new ErrorException("Cannot compile Exception", 24);
         } catch (IOException f) {
-            throw new ErrorException("Stream Exception", 25);
+            throw new ErrorException("Stream Exception: "+f.getMessage(), 25);
         }
 
         return 1;
