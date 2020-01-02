@@ -1,2 +1,26 @@
+add-class com.dupcia
+add-class com.nic
+remove-class com.nic
+add-class com.klasa1
+add-class com.klasa2
+add-interface com.inter1
+add-interface com.inter2
+remove-class com.klasa1
+remove-interface com.inter2
+add-method com.dupcia public static void sayHello(){System.out.println("Siema");}
+add-method com.dupcia public static void sayBye(){System.out.println("Siema");}
+remove-method com.dupcia.sayBye()
+
+add-before-method com.dupcia.sayHello() C:\Users\Dawid\git\jfk_lab2_correct\jfk_lab2_reflection\Lab2\src\exscript1
+add-after-method com.dupcia.sayHello() C:\Users\Dawid\git\jfk_lab2_correct\jfk_lab2_reflection\Lab2\src\exscript1
+set-method-body com.industry.Teacher.acx(int) C:\Users\Dawid\Desktop\test_making_jars\singlePackage\Nowy dokument tekstowy.txt
+add-after-method com.industry.Teacher.abc(int) C:\Users\Dawid\git\jfk_lab2_correct\jfk_lab2_reflection\Lab2\src\exscript1
+add-before-method com.industry.Teacher.abc(int) C:\Users\Dawid\git\jfk_lab2_correct\jfk_lab2_reflection\Lab2\src\exscript1
+
+add-field com.industry.Teacher int noga;
+add-field com.industry.Teacher double  liczba
+remove-field com.industry.Teacher  liczba
 add-ctor com.industry.Teacher public Teacher(int a, int b){}
-add-before-method com.industry.Teacher.Teacher(int,int) C:\Users\Dawid\git\jfk_lab2_correct\jfk_lab2_reflection\Lab2\src\main\script2
+add-ctor com.industry.Teacher private Teacher(double c){}
+remove-ctor com.industry.Teacher(double)
+set-ctor-body com.industry.Teacher(int) C:\Users\Dawid\git\jfk_lab2_correct\jfk_lab2_reflection\Lab2\src\exscript1

@@ -3,8 +3,6 @@ package Jfk_lab2;
 import javassist.*;
 
 import java.io.*;
-import java.sql.SQLOutput;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.regex.Pattern;
 
@@ -17,7 +15,6 @@ public class ScriptExecutor {
     ClassPool classPool = ClassPool.getDefault();
     public ScriptExecutor(String jarPath, String scriptPath, LinkedList<String> classNames) throws ErrorException {
         this.classNames = classNames;
-
 
         try {
             classPool.insertClassPath(jarPath);
@@ -57,10 +54,10 @@ public class ScriptExecutor {
             while((scriptLine=buffReader.readLine()) != null)
             {
                 if(scriptLine.equals("")) continue;
-                executeCommend(scriptLine);
+                executeCommend(scriptLine);     //GETTING 1 line of script and executing it; 1 commend = 1 line
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            throw new ErrorException("Script file "+scriptPath+" not found.",102);
         } catch(IOException f)
         {
             throw new ErrorException("Closing reared failure", 26);
@@ -69,13 +66,13 @@ public class ScriptExecutor {
     }
     private String [] getCommendAndContent(String scriptLine) throws ErrorException {
 
-        scriptLine = scriptLine.replace('\t', ' ');
+        scriptLine = scriptLine.replace('\t', ' ');//We dont need tab chars
         scriptLine=delRedundantWS(scriptLine);
 
         String[] commendAndContent = scriptLine.split(" ",2);
         if(commendAndContent.length!=2)// there is only 1 part - there is not content
         {
-            throw new ErrorException("Commend execution failure!", 31);
+            throw new ErrorException("Commend execution failure! -> commend always has min 2 parts [commend-one content]", 31);
         }
         commendAndContent[1] = delRedundantWS(commendAndContent[1]);//deleting WS between commend and content
 
@@ -114,48 +111,48 @@ public class ScriptExecutor {
             int index1 = commendAndContent[1].indexOf(' ');
             if(index1<0)
                 throw new ErrorException("Invalid command(Did u forget about method?)",98);
-            String clazzName = commendAndContent[1].substring(0,index1);
-            String methodString = commendAndContent[1].substring(index1,commendAndContent[1].length());
+            String clazzName = commendAndContent[1].substring(0,index1);//example : com.industry.Teacher
+            String methodString = commendAndContent[1].substring(index1,commendAndContent[1].length());//public int a(){}
             addFunction(clazzName,methodString, false);
         }else if(commendAndContent[0].equals("remove-method"))
         {
             System.out.println("Removing method "+commendAndContent[1]+"....");
-            String clazzName = getClassNameFromFunction(commendAndContent[1]);
+            String clazzName = getClassNameFromFunction(commendAndContent[1], false);//com.industry.Class
             removeMethod(clazzName, commendAndContent[1]);
         }else if(commendAndContent[0].equals("set-method-body"))
         {
             System.out.println("Setting method body: "+commendAndContent[1]+"....");
             String[] tempTable = commendAndContent[1].split("\\)", 2);//tempTable[1] gives code
-            if(tempTable.length<2)
+            if(tempTable.length<2)  //we need 2 parts -> package.Class.function() src
                 throw new ErrorException("Invalid commend(did u forget about src path?)",62);
             String methodName = tempTable[0]+")";
-            String clazzName = getClassNameFromFunction(methodName);
+            String clazzName = getClassNameFromFunction(methodName, false);
             setMethodContent(clazzName, methodName,  tempTable[1],0);
 
         }else if(commendAndContent[0].equals("add-before-method"))
         {
             System.out.println("Adding before method: "+commendAndContent[1]+"....");
             String[] tempTable = commendAndContent[1].split(" ", 2);
-            if(tempTable.length<2)
+            if(tempTable.length<2)//we need two parts (like in set-method-body)
                 throw new ErrorException("Invalid commend(did u forget about src path?)",63);
             String methodName = tempTable[0];
-            String clazzName =getClassNameFromFunction(methodName);
+            String clazzName =getClassNameFromFunction(methodName,false);
             setMethodContent(clazzName, methodName,  tempTable[1],-1);
 
         }else if(commendAndContent[0].equals("add-after-method"))
         {
             System.out.println("Adding after method: "+commendAndContent[1]);
             String[] tempTable = commendAndContent[1].split(" ", 2);
-            if(tempTable.length<2)
+            if(tempTable.length<2)//we need two parts like in set-method-body
                 throw new ErrorException("Invalid commend(did u forget about src path?)",64);
             String methodName = tempTable[0];
-            String clazzName =getClassNameFromFunction(methodName);
+            String clazzName =getClassNameFromFunction(methodName,false);
             setMethodContent(clazzName, methodName,  tempTable[1],1);
         }else if(commendAndContent[0].equals("add-field"))
         {
             System.out.println("Adding filed: "+commendAndContent[1]+"....");
             String[] parts = commendAndContent[1].split(" ", 2);//part 1 gives field
-            if(parts.length<2)
+            if(parts.length<2)//need 2 parts: com.package.Class type field
                 throw new ErrorException("Invalid commend(did u forget about field name?)",65);
             String clazzName = parts[0];
             String fieldName=delRedundantWS(parts[1]);
@@ -185,15 +182,15 @@ public class ScriptExecutor {
         }else if(commendAndContent[0].equals("remove-ctor"))
         {
             System.out.println("Removing constructor....");
-            String clazzName = getClassNameFromFunction(commendAndContent[1]);
+            String clazzName = getClassNameFromFunction(commendAndContent[1], true);
             removeCtor(clazzName, commendAndContent[1]);
         }else if(commendAndContent[0].equals("set-ctor-body"))
         {
             System.out.println("Setting ctor body ....");
             String[] tempTable = commendAndContent[1].split(" ", 2);
             String ctorName = tempTable[0];
-            String clazzName = getClassNameFromFunction(ctorName);
-            setContBody(clazzName, ctorName,  tempTable[1]);
+            String clazzName = getClassNameFromFunction(ctorName, true);
+            setCtorBody(clazzName, ctorName,  tempTable[1]);
         } else
         {
             throw new ErrorException("Unknown commend", 32);
@@ -213,12 +210,39 @@ public class ScriptExecutor {
         }
         return string;
     }
+    private String getClassNameFromFunction(String functionName, boolean withName) {
+        String clazzName ="";
+        String[] parts = functionName.split("\\.");
+        for(int i=0;i<parts.length-1; i++)
+        {
+
+            clazzName += parts[i];
+            if(!parts[i+1].contains("(")) {
+                clazzName += ".";
+            }
+            else
+            {
+                break;
+            }
+        }
+        if(withName)
+        {
+            String ctorName="."+parts[parts.length-1];
+            ctorName = ctorName.replace("("," ")
+                                .split(" ")[0];
+            clazzName +=ctorName;
+
+        }
+        return clazzName;
+    }
+
     private void addPackage(String nameOfPackage) throws ErrorException {
+        //checking package name
         Pattern pat = Pattern.compile("([a-zA-Z_$][a-zA-Z_$0-9]*\\.)*[a-zA-Z_$][a-zA-Z_$0-9]*");
         if(pat.matcher(nameOfPackage).matches())
         {
             addedPackagesNames.add(nameOfPackage);
-            System.out.println("Package has benn added");
+            System.out.println("Package has been added");
         }
         else
         {
@@ -262,7 +286,7 @@ public class ScriptExecutor {
                 clazz = classPool.makeClass(className);
             ctClasses.add(clazz);
             addedClassNames.add(clazz.getName());
-            System.out.println("Class/Interface has benn added");
+            System.out.println("Class/Interface has been added");
         }
         else
         {
@@ -308,7 +332,7 @@ public class ScriptExecutor {
                 CtConstructor ctor = CtNewConstructor.make(functionOuterBody, clazz);
                 clazz.addConstructor(ctor);
             }
-            System.out.println("Function has benn added");
+            System.out.println("Function has been added");
         } catch (NotFoundException e) {
             throw new ErrorException("Invalid name of class",52);
         }catch(CannotCompileException f)
@@ -316,29 +340,13 @@ public class ScriptExecutor {
             throw new ErrorException("Compilation Error: " + f.getReason(), 53);
         }
     }
-    private String getClassNameFromFunction(String functionName) {
-        String clazzName ="";
-        String[] parts = functionName.split("\\.");
-        for(int i=0;i<parts.length; i++)
-        {
-
-            clazzName += parts[i];
-            if(!parts[i+1].contains("(")) {
-                clazzName += ".";
-            }
-            else
-            {
-                break;
-            }
-        }
-        return clazzName;
-    }
     private void removeMethod(String clazzName, String longFunctionName) throws ErrorException {
         try {
-            longFunctionName=longFunctionName.replace(" ", "");//must be (int,int)
+            longFunctionName=longFunctionName.replace(" ", "");//must be (int,int).
             boolean removed = false;
             CtClass clazz = classPool.get(clazzName);
             CtMethod[] mets = clazz.getDeclaredMethods();
+
             for(CtMethod ct : mets)
             {
                 if(ct.getLongName().equals(longFunctionName)) {
@@ -357,6 +365,7 @@ public class ScriptExecutor {
     private void removeCtor(String clazzName, String longFunctionName) throws ErrorException {
         try {
             boolean removed = false;
+            longFunctionName=longFunctionName.replace(" ", "");//must be (int,int) not(int  , ..)
             CtClass clazz = classPool.get(clazzName);
             CtConstructor[] ctors = clazz.getDeclaredConstructors();
             for(CtConstructor ctor : ctors)
@@ -377,7 +386,7 @@ public class ScriptExecutor {
     }
     private void addField(String clazzName, String fieldName) throws ErrorException {
         try{
-            if(!fieldName.contains(";"))
+            if(!fieldName.contains(";"))//missing ; at the end of field
                 fieldName+=";";
             CtClass clazz = classPool.get(clazzName);
             CtField field = CtField.make(fieldName,clazz);
@@ -431,7 +440,7 @@ public class ScriptExecutor {
             throw new ErrorException("Cannot compile code: "+e.getReason(),55);
         }
     }
-    private void setContBody(String clazzName,String  ctorName,String srcPath) throws ErrorException {
+    private void setCtorBody(String clazzName,String  ctorName,String srcPath) throws ErrorException {
         srcPath = delRedundantWS(srcPath);
         boolean changed = false;
         ctorName=ctorName.replace(" ","");

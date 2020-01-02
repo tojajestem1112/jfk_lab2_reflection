@@ -1,7 +1,5 @@
 package Jfk_lab2;
 
-import Jfk_lab2.ErrorException;
-
 import java.util.LinkedList;
 
 public class ParameterReader

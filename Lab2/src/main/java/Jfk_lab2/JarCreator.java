@@ -42,14 +42,14 @@ public class JarCreator
                 JarOutputStream jos = new JarOutputStream(fos,manifest);
             ){
             byte buff[]=new byte[1024];
-            int l;
+            int var;
             for(int i=0; i<streamsForOtherFiles.size();i++)
             {
 
                 JarEntry entry = new JarEntry(entriesForOtherFiles.get(i));
                 jos.putNextEntry(entry);
-                while((l= (streamsForOtherFiles.get(i).read(buff, 0, buff.length))) !=-1)
-                    jos.write(buff,0, l );
+                while((var= (streamsForOtherFiles.get(i).read(buff, 0, buff.length))) !=-1)
+                    jos.write(buff,0, var );
                 jos.closeEntry();
             }
 
@@ -60,7 +60,7 @@ public class JarCreator
                 jos.putNextEntry(entry);
                 jos.closeEntry();
             }
-            for(int i=0; i<ctClasses.size(); i++)
+            for(int i=0; i<ctClasses.size(); i++)//adding all classes
             {
                 JarEntry entry = new JarEntry(ctClasses.get(i).getName().replace('.','/')+".class");
                 jos.putNextEntry(entry);

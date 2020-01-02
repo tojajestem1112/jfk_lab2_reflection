@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27feccf4-3cd0-4e29-a215-d1cc5190b2d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Lab2/src/exscript1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/CodeGetter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab2/src/main/mainScript" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab2/src/main/script1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab2/src/main/script2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab2/Example_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/Example_command.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/ErrorException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/ErrorException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2/src/exscript1" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/src/exscript1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarExplorer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarExplorer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/Main.java" afterDir="false" />
@@ -33,77 +27,81 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="30" column="46" lean-forward="true" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+            <state relative-caret-position="287">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lab2/Example_command.txt">
+        <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarExplorer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="133" selection-start-line="1" selection-start-column="133" selection-end-line="1" selection-end-column="133" />
+            <state relative-caret-position="15">
+              <caret line="165" column="48" lean-forward="true" selection-start-line="165" selection-start-column="48" selection-end-line="165" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lab2/src/main/script2">
+        <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/ParameterReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lab2/src/exscript1">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="27" selection-start-column="27" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lab2/src/main/script1">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/ErrorException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-53">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="68">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Lab2/Example_command.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarCreator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="62" column="69" selection-start-line="62" selection-start-column="69" selection-end-line="62" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/test_making_jars/singlePackage/dupcia.class">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lab2/src/exscript1">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/ScriptExecutor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="256">
-              <caret line="391" column="8" lean-forward="true" selection-start-line="391" selection-start-column="8" selection-end-line="391" selection-end-column="8" />
+              <caret line="430" column="26" lean-forward="true" selection-start-line="430" selection-start-column="26" selection-end-line="430" selection-end-column="26" />
               <folding>
-                <element signature="method#ScriptExecutor#0;class#ScriptExecutor#0" />
                 <element signature="method#prepareClasses#0;class#ScriptExecutor#0" />
-                <element signature="method#getCommendAndContent#0;class#ScriptExecutor#0" />
+                <element signature="method#executeScript#0;class#ScriptExecutor#0" />
                 <element signature="e#2931#2967#1" />
                 <element signature="e#3448#4429#1" />
                 <element signature="e#3091#3152#1" />
                 <element signature="e#3165#3200#1" />
                 <element signature="e#3337#3375#1" />
-                <element signature="e#3467#3521#1" />
                 <element signature="e#3591#3840#1" />
-                <element signature="e#7504#8457#1" />
                 <element signature="e#8521#9555#1" />
                 <element signature="e#4513#5232#1" />
-                <element signature="e#4846#5111#1" />
                 <element signature="e#6457#6701#1" />
                 <element signature="e#11458#11996#1" />
                 <element signature="e#12053#12749#1" />
@@ -115,15 +113,12 @@
                 <element signature="method#removePackage#0;class#ScriptExecutor#0" />
                 <element signature="method#addClass#0;class#ScriptExecutor#0" />
                 <element signature="method#removeClass#0;class#ScriptExecutor#0" />
-                <element signature="method#addFunction#0;class#ScriptExecutor#0" />
-                <element signature="method#getClassNameFromFunction#0;class#ScriptExecutor#0" />
                 <element signature="method#removeMethod#0;class#ScriptExecutor#0" />
-                <element signature="e#12215#12913#0" />
+                <element signature="e#14982#15034#0" />
                 <element signature="method#removeCtor#0;class#ScriptExecutor#0" />
                 <element signature="method#addField#0;class#ScriptExecutor#0" />
                 <element signature="method#removeField#0;class#ScriptExecutor#0" />
-                <element signature="method#setMethodContent#0;class#ScriptExecutor#0" />
-                <element signature="method#setContBody#0;class#ScriptExecutor#0" />
+                <element signature="e#15083#15394#0" />
               </folding>
             </state>
           </provider>
@@ -134,19 +129,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="74" lean-forward="true" selection-start-line="2" selection-start-column="74" selection-end-line="2" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/CodeGetter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="22" column="60" selection-start-line="22" selection-start-column="60" selection-end-line="22" selection-end-column="60" />
-              <folding>
-                <element signature="e#108#109#0" expanded="true" />
-                <element signature="e#128#129#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -174,6 +156,13 @@
       <find>add-bef</find>
       <find>addC</find>
       <find>setMetho</find>
+      <find>31</find>
+      <find>getclass</find>
+      <find>getCla</find>
+      <find>var3</find>
+      <find>add-</find>
+      <find>setMeth</find>
+      <find>addc</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -183,16 +172,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/OtherFileInJar.java" />
-        <option value="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/Main.java" />
-        <option value="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarCreator.java" />
-        <option value="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarExplorer.java" />
         <option value="$PROJECT_DIR$/Lab2/src/main/script1" />
         <option value="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/CodeGetter.java" />
-        <option value="$PROJECT_DIR$/Lab2/src/exscript1" />
         <option value="$PROJECT_DIR$/Lab2/src/main/script2" />
         <option value="$PROJECT_DIR$/Lab2/src/main/mainScript" />
-        <option value="$PROJECT_DIR$/Lab2/Example_command.txt" />
+        <option value="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/ParameterReader.java" />
+        <option value="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarExplorer.java" />
+        <option value="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/Main.java" />
         <option value="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/ScriptExecutor.java" />
+        <option value="$PROJECT_DIR$/Lab2/src/exscript1" />
+        <option value="$PROJECT_DIR$/Lab2/Example_command.txt" />
+        <option value="$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarCreator.java" />
       </list>
     </option>
   </component>
@@ -224,11 +214,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="147" />
-    <option name="y" value="111" />
-    <option name="width" value="1779" />
-    <option name="height" value="798" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="57" />
+    <option name="y" value="107" />
+    <option name="width" value="1399" />
+    <option name="height" value="828" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -310,15 +300,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1577711479047</updated>
-      <workItem from="1577711483639" duration="38451000" />
+      <workItem from="1577711483639" duration="52492000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38451000" />
+    <option name="totallyTimeSpent" value="52492000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="118" y="89" width="1423" height="638" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
@@ -326,7 +316,7 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.14966443" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13624161" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -335,14 +325,14 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.270751" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.1769437" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Palette" />
       <window_info anchor="right" id="Theme Preview" />
-      <window_info active="true" anchor="right" id="Maven" visible="true" weight="0.1269259" />
+      <window_info anchor="right" id="Maven" visible="true" weight="0.11610738" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info anchor="right" id="Database" />
@@ -405,37 +395,10 @@
     <entry file="file://$USER_HOME$/Desktop/int2.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/ParameterReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="89" column="49" selection-start-line="89" selection-start-column="49" selection-end-line="89" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/OtherFileInJar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarExplorer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="65" column="63" selection-start-line="65" selection-start-column="63" selection-end-line="65" selection-end-column="63" />
-          <folding>
-            <element signature="e#6552#6553#0" expanded="true" />
-            <element signature="e#6595#6596#0" expanded="true" />
-            <element signature="e#6788#6789#0" expanded="true" />
-            <element signature="e#6831#6832#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="51" column="32" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -464,13 +427,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lab2/src/exscript1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="27" selection-start-column="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lab2/src/main/script1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -485,53 +441,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Lab2/src/main/mainScript">
+    <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarExplorer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="74" lean-forward="true" selection-start-line="2" selection-start-column="74" selection-end-line="2" selection-end-column="74" />
+        <state relative-caret-position="15">
+          <caret line="165" column="48" lean-forward="true" selection-start-line="165" selection-start-column="48" selection-end-line="165" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/Teacher.class">
+    <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/ParameterReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Lab2/Example_command.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="133" selection-start-line="1" selection-start-column="133" selection-end-line="1" selection-end-column="133" />
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="30" column="46" lean-forward="true" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+        <state relative-caret-position="287">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/7zE4732DCA3/dupcia.class">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/ScriptExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
-          <caret line="391" column="8" lean-forward="true" selection-start-line="391" selection-start-column="8" selection-end-line="391" selection-end-column="8" />
+          <caret line="430" column="26" lean-forward="true" selection-start-line="430" selection-start-column="26" selection-end-line="430" selection-end-column="26" />
           <folding>
-            <element signature="method#ScriptExecutor#0;class#ScriptExecutor#0" />
             <element signature="method#prepareClasses#0;class#ScriptExecutor#0" />
-            <element signature="method#getCommendAndContent#0;class#ScriptExecutor#0" />
+            <element signature="method#executeScript#0;class#ScriptExecutor#0" />
             <element signature="e#2931#2967#1" />
             <element signature="e#3448#4429#1" />
             <element signature="e#3091#3152#1" />
             <element signature="e#3165#3200#1" />
             <element signature="e#3337#3375#1" />
-            <element signature="e#3467#3521#1" />
             <element signature="e#3591#3840#1" />
-            <element signature="e#7504#8457#1" />
             <element signature="e#8521#9555#1" />
             <element signature="e#4513#5232#1" />
-            <element signature="e#4846#5111#1" />
             <element signature="e#6457#6701#1" />
             <element signature="e#11458#11996#1" />
             <element signature="e#12053#12749#1" />
@@ -543,16 +494,54 @@
             <element signature="method#removePackage#0;class#ScriptExecutor#0" />
             <element signature="method#addClass#0;class#ScriptExecutor#0" />
             <element signature="method#removeClass#0;class#ScriptExecutor#0" />
-            <element signature="method#addFunction#0;class#ScriptExecutor#0" />
-            <element signature="method#getClassNameFromFunction#0;class#ScriptExecutor#0" />
             <element signature="method#removeMethod#0;class#ScriptExecutor#0" />
-            <element signature="e#12215#12913#0" />
+            <element signature="e#14982#15034#0" />
             <element signature="method#removeCtor#0;class#ScriptExecutor#0" />
             <element signature="method#addField#0;class#ScriptExecutor#0" />
             <element signature="method#removeField#0;class#ScriptExecutor#0" />
-            <element signature="method#setMethodContent#0;class#ScriptExecutor#0" />
-            <element signature="method#setContBody#0;class#ScriptExecutor#0" />
+            <element signature="e#15083#15394#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Teacher.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/test_making_jars/singlePackage/dupcia.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab2/src/main/mainScript">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="74" lean-forward="true" selection-start-line="2" selection-start-column="74" selection-end-line="2" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab2/src/exscript1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/test_making_jars/singlePackage/Teacher.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab2/src/main/java/Jfk_lab2/JarCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="62" column="69" selection-start-line="62" selection-start-column="69" selection-end-line="62" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab2/Example_command.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
         </state>
       </provider>
     </entry>

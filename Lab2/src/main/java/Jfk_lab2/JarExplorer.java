@@ -1,7 +1,5 @@
 package Jfk_lab2;
 
-import Jfk_lab2.ErrorException;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.*;
@@ -28,8 +26,6 @@ public class JarExplorer
         this.jarPath = jarPath;
         Enumeration<JarEntry> enumeration;
         JarFile jarFile;
-
-
         try
         {
             jarFile = new JarFile(jarPath+"//");
@@ -41,10 +37,10 @@ public class JarExplorer
             throw new ErrorException("The input file has been not found [.jar]", 3);
         }
 
-        while(enumeration.hasMoreElements())
+        while(enumeration.hasMoreElements())//checking all JarEntries
         {
             JarEntry jarEntry = enumeration.nextElement();
-            if(jarEntry.isDirectory() && !jarEntry.getName().contains("-"))
+            if(jarEntry.isDirectory() && !jarEntry.getName().contains("-"))//it`s package
             {
                 String clazz = jarEntry.getName();
                 clazz = clazz.substring(0,clazz.length()-1)
@@ -52,14 +48,14 @@ public class JarExplorer
                 packagesNames.add(clazz);
 
             }
-            else if(!jarEntry.isDirectory() && jarEntry.getName().endsWith(".class"))
+            else if(!jarEntry.isDirectory() && jarEntry.getName().endsWith(".class"))//its class
             {
                 String clazz = jarEntry.getName();
                 clazz = clazz.substring(0,clazz.length()-6)
                                 .replace('/','.');
                 classNames.add(clazz);
             }
-            else if(!jarEntry.isDirectory()&&!jarEntry.getName().endsWith(".MF"))
+            else if(!jarEntry.isDirectory()&&!jarEntry.getName().endsWith(".MF"))//its single file (not Manifest)
             {
                 try {
                     streamsForOtherFiles.add(jarFile.getInputStream(jarEntry));
@@ -99,7 +95,7 @@ public class JarExplorer
             try {
                 Class singleClass = classLoader.loadClass(classes.get(i));
                 Method[] methods = singleClass.getDeclaredMethods();
-                showFunctions(methods, true);
+                showFunctions(methods, true);   //showing function
             } catch (ClassNotFoundException e) {
                 System.out.println("[WARN] Class " + classes.get(i) + "not found. Methods of class can not be showed");
             }
@@ -114,7 +110,7 @@ public class JarExplorer
             try {
                 Class singleClass = classLoader.loadClass(classes.get(i));
                 Constructor<?>[] ctors = singleClass.getDeclaredConstructors();
-                showFunctions(ctors, false);
+                showFunctions(ctors, false);//showing function
             } catch (ClassNotFoundException e) {
                 System.out.println("[WARN] Class " + classes.get(i) + "not found. Constructors of class can not be showed");
             }
@@ -131,7 +127,7 @@ public class JarExplorer
                 Class singleClass = classLoader.loadClass(classes.get(i));
                 Field[] fields = singleClass.getDeclaredFields();
                 for(int k=0; k<fields.length; k++)
-                {
+                {//modifier type name
                     System.out.println("\t\t"+Modifier.toString(fields[k].getModifiers())
                                             + " "
                                             +fields[k].getType().getName()
@@ -175,15 +171,13 @@ public class JarExplorer
 
     public LinkedList<String> getClassNames() {return classNames;}
 
-    public LinkedList<String> getPackagesNames() {return packagesNames;}
-
     public Manifest getManifest() {return manifest;}
 
     public LinkedList<InputStream> getStreamsForOtherFiles() {
         return streamsForOtherFiles;
     }
 
-    public LinkedList<String> getEntriesForOtherFiles() {
+    public LinkedList<String> getEntriesNamesForOtherFiles() {
         return entriesForOtherFiles;
     }
 }
