@@ -2,7 +2,7 @@ package Jfk_lab2;
 
 import java.util.LinkedList;
 
-public class ParameterReader
+public class ParameterReader implements ParameterReading
 {
     private boolean listOfPackagesParameter = false;
     private boolean listOfClassesParameter = false;

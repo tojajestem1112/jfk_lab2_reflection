@@ -11,7 +11,7 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.jar.Manifest;
 
-public class JarExplorer
+public class JarExplorer implements JarExploring
 {
 
     private String jarPath;

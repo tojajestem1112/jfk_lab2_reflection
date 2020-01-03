@@ -2,13 +2,14 @@ package Jfk_lab2;
 
 import java.io.*;
 
-public class CodeGetter extends File
+public class CodeGetter extends File implements GettingCodeFromPath
 {
     CodeGetter(String path){
         super(path);
     }
     public String getCode() throws ErrorException {
         StringBuilder returning = new StringBuilder();
+        returning.append("{");
         try (
                 FileReader fileReader = new FileReader(this);
                 BufferedReader buffReader = new BufferedReader(fileReader);
@@ -25,6 +26,6 @@ public class CodeGetter extends File
         {
             throw new ErrorException("Can not open src file!", 28);
         }
-        return returning.toString();
+        return returning.toString()+"}";
     }
 }

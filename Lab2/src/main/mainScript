@@ -1,4 +1,5 @@
 add-field com.diamond.iain.javagame.entities.Player static boolean uPressed=false
-add-method com.diamond.iain.javagame.entities.Player public void uFunction(){uPressed=true;}
+add-method com.diamond.iain.javagame.entities.Player public void uFunction()
+set-method-body com.diamond.iain.javagame.entities.Player.uFunction() C:\Users\Dawid\git\jfk_lab2_correct\jfk_lab2_reflection\Lab2\src\main\script3
 add-before-method com.diamond.iain.javagame.entities.Player.addScore(int) C:\Users\Dawid\git\jfk_lab2_correct\jfk_lab2_reflection\Lab2\src\main\script2
 add-before-method com.diamond.iain.javagame.gfx.KeyManager.keyPressed(java.awt.event.KeyEvent) C:\Users\Dawid\git\jfk_lab2_correct\jfk_lab2_reflection\Lab2\src\main\script1

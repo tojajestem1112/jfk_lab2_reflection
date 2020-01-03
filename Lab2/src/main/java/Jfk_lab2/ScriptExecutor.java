@@ -42,7 +42,6 @@ public class ScriptExecutor {
         }
     }
 
-
     private void executeScript(String scriptPath) throws ErrorException {
         System.out.println("EXECUTING SCRIPT");
         File file = new File(scriptPath);
@@ -112,7 +111,7 @@ public class ScriptExecutor {
             if(index1<0)
                 throw new ErrorException("Invalid command(Did u forget about method?)",98);
             String clazzName = commendAndContent[1].substring(0,index1);//example : com.industry.Teacher
-            String methodString = commendAndContent[1].substring(index1,commendAndContent[1].length());//public int a(){}
+            String methodString = " "+commendAndContent[1].substring(index1,commendAndContent[1].length());//public int a()
             addFunction(clazzName,methodString, false);
         }else if(commendAndContent[0].equals("remove-method"))
         {
@@ -124,7 +123,7 @@ public class ScriptExecutor {
             System.out.println("Setting method body: "+commendAndContent[1]+"....");
             String[] tempTable = commendAndContent[1].split("\\)", 2);//tempTable[1] gives code
             if(tempTable.length<2)  //we need 2 parts -> package.Class.function() src
-                throw new ErrorException("Invalid commend(did u forget about src path?)",62);
+                throw new ErrorException("Invalid commend(did u forget about src path or method?)",62);
             String methodName = tempTable[0]+")";
             String clazzName = getClassNameFromFunction(methodName, false);
             setMethodContent(clazzName, methodName,  tempTable[1],0);
@@ -132,20 +131,20 @@ public class ScriptExecutor {
         }else if(commendAndContent[0].equals("add-before-method"))
         {
             System.out.println("Adding before method: "+commendAndContent[1]+"....");
-            String[] tempTable = commendAndContent[1].split(" ", 2);
+            String[] tempTable = commendAndContent[1].split("\\)", 2);
             if(tempTable.length<2)//we need two parts (like in set-method-body)
                 throw new ErrorException("Invalid commend(did u forget about src path?)",63);
-            String methodName = tempTable[0];
+            String methodName = tempTable[0]+")";
             String clazzName =getClassNameFromFunction(methodName,false);
             setMethodContent(clazzName, methodName,  tempTable[1],-1);
 
         }else if(commendAndContent[0].equals("add-after-method"))
         {
             System.out.println("Adding after method: "+commendAndContent[1]);
-            String[] tempTable = commendAndContent[1].split(" ", 2);
+            String[] tempTable = commendAndContent[1].split("\\)", 2);
             if(tempTable.length<2)//we need two parts like in set-method-body
                 throw new ErrorException("Invalid commend(did u forget about src path?)",64);
-            String methodName = tempTable[0];
+            String methodName = tempTable[0]+")";
             String clazzName =getClassNameFromFunction(methodName,false);
             setMethodContent(clazzName, methodName,  tempTable[1],1);
         }else if(commendAndContent[0].equals("add-field"))
@@ -173,7 +172,7 @@ public class ScriptExecutor {
         }else if(commendAndContent[0].equals("add-ctor"))
         {
             System.out.println("Adding constructor: "+commendAndContent[1]+"....");
-            int index1 = commendAndContent[1].indexOf(' ');
+            int index1 = commendAndContent[1].indexOf('(');
             if(index1<0)
                 throw new ErrorException("Invalid command(Did u forget about ctor?)",98);
             String clazzName = commendAndContent[1].substring(0,index1);
@@ -210,7 +209,7 @@ public class ScriptExecutor {
         }
         return string;
     }
-    private String getClassNameFromFunction(String functionName, boolean withName) {
+    private String getClassNameFromFunction(String functionName, boolean withFunctionName) {
         String clazzName ="";
         String[] parts = functionName.split("\\.");
         for(int i=0;i<parts.length-1; i++)
@@ -225,7 +224,7 @@ public class ScriptExecutor {
                 break;
             }
         }
-        if(withName)
+        if(withFunctionName)
         {
             String ctorName="."+parts[parts.length-1];
             ctorName = ctorName.replace("("," ")
@@ -235,14 +234,25 @@ public class ScriptExecutor {
         }
         return clazzName;
     }
-
     private void addPackage(String nameOfPackage) throws ErrorException {
         //checking package name
         Pattern pat = Pattern.compile("([a-zA-Z_$][a-zA-Z_$0-9]*\\.)*[a-zA-Z_$][a-zA-Z_$0-9]*");
         if(pat.matcher(nameOfPackage).matches())
         {
-            addedPackagesNames.add(nameOfPackage);
-            System.out.println("Package has been added");
+            boolean isPackage = false;
+            for(CtClass ct :ctClasses)
+            {
+                if(ct.getPackageName().startsWith(nameOfPackage))
+                {
+                    System.out.println("[WARN] That package is already in jarFile");
+                    isPackage = true;
+                    break;
+                }
+            }
+            if(!isPackage) {
+                addedPackagesNames.add(nameOfPackage);
+                System.out.println("Package has been added");
+            }
         }
         else
         {
@@ -253,7 +263,7 @@ public class ScriptExecutor {
         boolean removed = false;
         for(int i=0;i<addedPackagesNames.size();i++)
         {
-            if(addedPackagesNames.get(i).startsWith(packageName))
+            if(addedPackagesNames.get(i).equals(packageName))
             {
                 addedPackagesNames.remove(i);
                 i--;
@@ -324,12 +334,25 @@ public class ScriptExecutor {
     }
     private void addFunction(String className, String functionOuterBody, boolean isCtor) throws ErrorException {
         try {
+            Pattern pat = Pattern.compile("[a-zA-Z_$0-9. ]*\\([a-zA-Z_$0-9., ]*\\) *");
+            className=delRedundantWS(className);
+
+            if(!pat.matcher(functionOuterBody).matches())
+                throw new ErrorException("Invalid name of function",52);
+
             CtClass clazz = classPool.get(className);
+            if(functionOuterBody.contains(" void ")&&!clazz.isInterface())
+                functionOuterBody += "{}";
+            else if(!clazz.isInterface())
+                functionOuterBody += "{return null;}";
+            else
+                functionOuterBody += ";";
+
             if(!isCtor) {
                 CtMethod method = CtNewMethod.make(functionOuterBody, clazz);
                 clazz.addMethod(method);
             } else {
-                CtConstructor ctor = CtNewConstructor.make(functionOuterBody, clazz);
+                CtConstructor ctor = CtNewConstructor.make("public " +clazz.getSimpleName()+functionOuterBody, clazz);
                 clazz.addConstructor(ctor);
             }
             System.out.println("Function has been added");

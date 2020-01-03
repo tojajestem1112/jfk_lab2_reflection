@@ -1,4 +1,8 @@
-add-class com.dupcia
+
+add-package zz.z
+add-package zz.y
+remove-package zz.y
+add-class com.z
 add-class com.nic
 remove-class com.nic
 add-class com.klasa1
@@ -7,12 +11,12 @@ add-interface com.inter1
 add-interface com.inter2
 remove-class com.klasa1
 remove-interface com.inter2
-add-method com.dupcia public static void sayHello(){System.out.println("Siema");}
-add-method com.dupcia public static void sayBye(){System.out.println("Siema");}
+add-method com.dupcia public static int sayHello()
+add-method com.dupcia public static void sayBye()
 remove-method com.dupcia.sayBye()
 
-add-before-method com.dupcia.sayHello() C:\Users\Dawid\git\jfk_lab2_correct\jfk_lab2_reflection\Lab2\src\exscript1
-add-after-method com.dupcia.sayHello() C:\Users\Dawid\git\jfk_lab2_correct\jfk_lab2_reflection\Lab2\src\exscript1
+add-before-method com.z.sayHello() C:\Users\Dawid\git\jfk_lab2_correct\jfk_lab2_reflection\Lab2\src\exscript1
+add-after-method com.z.sayHello() C:\Users\Dawid\git\jfk_lab2_correct\jfk_lab2_reflection\Lab2\src\exscript1
 set-method-body com.industry.Teacher.acx(int) C:\Users\Dawid\Desktop\test_making_jars\singlePackage\Nowy dokument tekstowy.txt
 add-after-method com.industry.Teacher.abc(int) C:\Users\Dawid\git\jfk_lab2_correct\jfk_lab2_reflection\Lab2\src\exscript1
 add-before-method com.industry.Teacher.abc(int) C:\Users\Dawid\git\jfk_lab2_correct\jfk_lab2_reflection\Lab2\src\exscript1
